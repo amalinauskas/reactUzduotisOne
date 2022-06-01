@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Article from "./components/Article/Article";
+import Button from "./components/Button/Button";
+import Hero from "./components/Hero/Hero";
+import Section from "./components/Section/Section";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Hero title="New York" subtitle="Fond out everything about NY here!" />
+      <Section>
+        <Article title="Best bars in NY">
+          <ul>
+            <li>One Bar</li>
+            <li>Two Bar</li>
+            <li>Three Bar</li>
+          </ul>
+        </Article>
+        <Article title="Things to do in NY">
+          <p>You can do many things..</p>
+          <Button
+            type="button"
+            handleClick={() =>
+              window.location.replace("https://www.newyorker.com/")
+            }
+          >
+            Button!!
+          </Button>
+        </Article>
+      </Section>
+    </>
   );
-}
+};
 
 export default App;
